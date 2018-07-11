@@ -6,7 +6,7 @@ class Team extends Component {
   render() {
 
     return (
-      <div className="col-2">
+      <div>
         <div className="team col-12">
             <span className="col-3">
                 <img className="countryFlag" src={this.props.flag} alt="country flag"/>
