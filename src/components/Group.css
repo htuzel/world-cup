@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
 
 .group {
-    border: 2px solid #A68E34;
+    border: 2px ridge #A68E34;
     padding-right: 10px;
 }
 
@@ -17,7 +17,7 @@
     background-color: #A68E34;
     padding: 3px;
     position: relative;
-    bottom: 5px;
+    bottom: 6px;
     left : 12px;
     border-bottom-left-radius: 11px;
     margin-left: 9px;

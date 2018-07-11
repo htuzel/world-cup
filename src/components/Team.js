@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './Team.css';
 
 class Team extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          point : 0,
+      }
+  }  
+
 
   render() {
 
@@ -14,8 +21,11 @@ class Team extends Component {
             <span className="col-6 teamName">
                 {this.props.team}
             </span>
-            <span className="col-6 teamOverall">
+            <span className="col-3 teamOverall">
                 {this.props.overall}
+            </span>
+            <span className="col-3 teamPoint">
+                {this.state.point}
             </span>
         </div>
       </div>       
