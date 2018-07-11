@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
 
 .team {
     height: 27px;
@@ -6,14 +7,25 @@
 }
 
 .countryFlag {
-    height: 30px;
+    height: 27px;
     margin-right: 10px;
 }
 
-.teamName {
-    color: #ffffff;
+.teamOverall {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    float: right;
+    text-align: right;
+    padding: 1px;
+    color: #e8e8e8;
     position: relative;
-    bottom: 10px;
+    bottom: 3px;
+}
+
+.teamName {
+    color: #ffffcc;
+    position: relative;
+    bottom: 8px;
 }
 
 .col-1 {
