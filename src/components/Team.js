@@ -12,17 +12,17 @@ class Team extends Component {
     return (
         <div className="team row col-12 pt-2 ml-2 pl-0">
             <span className="col-2">
-                <img className="countryFlag" src={this.props.flag} alt="country flag"/>
+                <img className="countryFlag" src={this.props.team.flag} alt="country flag"/>
             </span>
             <span className="col-8 teamName">
-                {this.props.team}
+                {this.props.team.name}
                 <span className="col-1 teamOverall">
-                    {this.props.overall}
+                    {this.props.team.overall}
                 </span>
             </span>
             
             <span className="col-2 teamPoint">
-                {this.props.point}
+                {this.props.team.point}
             </span>
         </div> 
     );

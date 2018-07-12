@@ -40,10 +40,10 @@ class ScoreTable extends Component {
             <div className="scoreTable row col-12 text-center justify-content-center ">
                 <div className="col-6 col-md-3 pull-right">
                     <span className="col-4">
-                        <img className="countryFlag" src={this.props.flag[0]} alt="country flag"/>
+                        <img className="countryFlag" src={this.props.teams[0].flag} alt="country flag"/>
                     </span>
                     <span className="col-8 teamName">
-                        {this.props.team[0]}
+                        {this.props.teams[0].name}
                     </span>
                 </div>
                 <div className="col-6 col-md-1">
@@ -54,10 +54,10 @@ class ScoreTable extends Component {
                 </div>
                 <div className="col-6 col-md-3 pull-left">
                     <span className="col-8 teamName">
-                        {this.props.team[1]}
+                        {this.props.teams[1].name}
                     </span>
                     <span className="col-4">
-                        <img className="countryFlag" src={this.props.flag[1]} alt="country flag"/>
+                        <img className="countryFlag" src={this.props.teams[1].flag} alt="country flag"/>
                     </span>
                 </div>
             </div>
