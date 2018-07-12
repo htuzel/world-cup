@@ -2,7 +2,7 @@
 
 this project has been created for educational purposes.
 
-![World Cup 2018 Simulation with React.js](https://ibb.co/gqh4wo)
+![World Cup 2018 Simulation with React.js](https://preview.ibb.co/fB7F2T/react_world_cup.jpg)
 
 https://ibb.co/gqh4wo
 
