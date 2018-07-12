@@ -13,22 +13,21 @@ class Team extends Component {
   render() {
 
     return (
-      <div>
-        <div className="team col-12">
-            <span className="col-3">
+        <div className="team row col-12 pt-2 ml-2 pl-0">
+            <span className="col-2">
                 <img className="countryFlag" src={this.props.flag} alt="country flag"/>
             </span>
-            <span className="col-6 teamName">
+            <span className="col-8 teamName">
                 {this.props.team}
+                <span className="col-1 teamOverall">
+                    {this.props.overall}
+                </span>
             </span>
-            <span className="col-3 teamOverall">
-                {this.props.overall}
-            </span>
-            <span className="col-3 teamPoint">
+            
+            <span className="col-2 teamPoint">
                 {this.state.point}
             </span>
-        </div>
-      </div>       
+        </div> 
     );
   }
 }

@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Group from './components/Group';
+import Tournament from './components/tournament';
 import registerServiceWorker from './registerServiceWorker';
-import uruguayflag from './countries/uy.svg';
-import russiaflag from './countries/rs.svg';
-import arabiaflag from './countries/sa.svg';
-import egyptflag from './countries/et.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import 'bootstrap';
+import 'jquery';
+import 'popper.js';
 
-var groupATeams = new Array ("Uruguay", "Russia", "Saudi Arabia", "Egypt");
-var groupAFlags = new Array (uruguayflag, russiaflag, arabiaflag, egyptflag);
-var groupAOverall = new Array (89, 83, 74, 79);
 
-ReactDOM.render(<Group team= {groupATeams} flag={groupAFlags} overall={groupAOverall}/>, document.getElementById('root'));
+
+
+ReactDOM.render(<Tournament/>, document.getElementById('root'));
 registerServiceWorker();
