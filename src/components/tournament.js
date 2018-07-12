@@ -112,8 +112,8 @@ class Tournament extends Component {
     let overall1 = this.state.MatchTeams[0].overall;
     let overall2 = this.state.MatchTeams[1].overall;
 
-    let newscore1 = Math.floor(overall1 * 5 * Math.random()/100);
-    let newscore2 = Math.floor(overall2 * 5 * Math.random()/100);
+    let newscore1 = Math.floor(overall1 * 8 * Math.random()/120);
+    let newscore2 = Math.floor(overall2 * 8 * Math.random()/120);
 
     if(newscore1 > newscore2){
 
