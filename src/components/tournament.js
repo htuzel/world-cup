@@ -35,6 +35,7 @@ import colombiaflag from '../countries/co.svg';
 import japanflag from '../countries/jp.svg';
 import senegalflag from '../countries/sn.svg';
 import polandflag from '../countries/pl.svg';
+import none from '../countries/none.svg';
 
 
 var groupATeams = new Array ("Uruguay", "Russia", "Saudi Arabia", "Egypt");
@@ -69,9 +70,42 @@ class Tournament extends Component {
   constructor(props){
     super(props);
     this.state = {
-      MatchTeams : ['Brazil','France'],
-      MatchFlags : [brazilflag,franceflag]
+      MatchTeams : ['Uruguay','Russia'],
+      overall1 : 89,
+      overall2 : 83,
+      MatchFlags : [uruguayflag,russiaflag],
+      score1  : 0,
+      score2  : 0,
+      groupAPoints : [0,0,0,0],
+      groupBPoints : [0,0,0,0],
+      groupCPoints : [0,0,0,0],
+      groupDPoints : [0,0,0,0],
+      groupEPoints : [0,0,0,0],
+      groupFPoints : [0,0,0,0],
+      groupGPoints : [0,0,0,0],
+      groupHPoints : [0,0,0,0],
+
+      day : 0,
     }
+  }
+
+  startMatch(e) {
+
+    let overall1 = this.state.overall1;
+    let overall2 = this.state.overall2;
+
+    let newscore1 = Math.floor(overall1 * 5 * Math.random()/100);
+    let newscore2 = Math.floor(overall2 * 5 * Math.random()/100);
+
+    let nextDay = this.state.day + 1;
+
+    this.setState({
+      day: nextDay,
+      score1 : newscore1,
+      score2 : newscore2
+    });
+
+
   }
 
   render() {
@@ -81,22 +115,22 @@ class Tournament extends Component {
           <h1 className="header">World Cup 2018</h1>
         </div>  
         <div className="row">
-          <Group className="col-12 col-md-6 col-lg-3" team={groupATeams} flag={groupAFlags} overall={groupAOverall} groupname="A"/>
-          <Group className="col-12 col-md-6 col-lg-3" team={groupBTeams} flag={groupBFlags} overall={groupBOverall} groupname="B"/>
-          <Group className="col-12 col-md-6 col-lg-3" team={groupCTeams} flag={groupCFlags} overall={groupCOverall} groupname="C"/>
-          <Group className="col-12 col-md-6 col-lg-3" team={groupDTeams} flag={groupDFlags} overall={groupDOverall} groupname="D"/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupATeams} flag={groupAFlags} overall={groupAOverall} groupname="A" points={this.state.groupAPoints}/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupBTeams} flag={groupBFlags} overall={groupBOverall} groupname="B" points={this.state.groupBPoints}/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupCTeams} flag={groupCFlags} overall={groupCOverall} groupname="C" points={this.state.groupCPoints}/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupDTeams} flag={groupDFlags} overall={groupDOverall} groupname="D" points={this.state.groupDPoints}/>
         </div>
         <div className="row">
-          <Group className="col-12 col-md-6 col-lg-3" team={groupETeams} flag={groupEFlags} overall={groupEOverall} groupname="E"/>
-          <Group className="col-12 col-md-6 col-lg-3" team={groupFTeams} flag={groupFFlags} overall={groupFOverall} groupname="F"/>
-          <Group className="col-12 col-md-6 col-lg-3" team={groupGTeams} flag={groupGFlags} overall={groupGOverall} groupname="G"/>
-          <Group className="col-12 col-md-6 col-lg-3" team={groupHTeams} flag={groupHFlags} overall={groupHOverall} groupname="H"/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupETeams} flag={groupEFlags} overall={groupEOverall} groupname="E" points={this.state.groupEPoints}/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupFTeams} flag={groupFFlags} overall={groupFOverall} groupname="F" points={this.state.groupFPoints}/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupGTeams} flag={groupGFlags} overall={groupGOverall} groupname="G" points={this.state.groupGPoints}/>
+          <Group className="col-12 col-md-6 col-lg-3" team={groupHTeams} flag={groupHFlags} overall={groupHOverall} groupname="H" points={this.state.groupHPoints}/>
         </div>
         <div className="row">
-          <ScoreTable team={this.state.MatchTeams} flag={this.state.MatchFlags} />
+          <ScoreTable team={this.state.MatchTeams} flag={this.state.MatchFlags} scores={[this.state.score1,this.state.score2]}/>
         </div>
         <div className="row justify-content-center">
-          <button className="btn btn-warning">Start Simulation</button>
+          <button className="btn btn-warning"  onClick={this.startMatch.bind(this)} >Start Match</button>
         </div>
       </div>
     );

@@ -11,14 +11,26 @@ import Digit7 from '../digits/7.png';
 import Digit8 from '../digits/8.png';
 import Digit9 from '../digits/9.png';
 
-class ScoreTable extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-          point : 0,
-      }
-  }  
 
+
+class ScoreTable extends Component {
+  
+  Digit = new Array([Digit0,Digit1,Digit2,Digit3,Digit4,Digit5,Digit6,Digit7,Digit8,Digit9]);
+
+  constructor(props){
+      super(props); 
+      this.state = {
+          score1 : this.Digit[0][this.props.scores[0]],
+          score2 : this.Digit[0][this.props.scores[1]],
+      }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ 
+        score1 : this.Digit[0][nextProps.scores[0]],
+        score2 : this.Digit[0][nextProps.scores[1]],
+    });  
+  }
 
   render() {
 
@@ -26,7 +38,7 @@ class ScoreTable extends Component {
         
         <div className="container pl-5">
             <div className="scoreTable row col-12 text-center justify-content-center ">
-                <div className="col-3 pull-right">
+                <div className="col-6 col-md-3 pull-right">
                     <span className="col-4">
                         <img className="countryFlag" src={this.props.flag[0]} alt="country flag"/>
                     </span>
@@ -34,13 +46,13 @@ class ScoreTable extends Component {
                         {this.props.team[0]}
                     </span>
                 </div>
-                <div className="col-1">
-                    <img className="scoreDigit" src={Digit0} alt="Score Digit 1"/>
+                <div className="col-6 col-md-1">
+                    <img className="scoreDigit" src={this.state.score1} alt="Score Digit 1"/>
                 </div>
-                <div className="col-1">
-                    <img className="scoreDigit" src={Digit0} alt="Score Digit 2"/>
+                <div className="col-6 col-md-1">
+                    <img className="scoreDigit" src={this.state.score2} alt="Score Digit 2"/>
                 </div>
-                <div className="col-3 pull-left">
+                <div className="col-6 col-md-3 pull-left">
                     <span className="col-8 teamName">
                         {this.props.team[1]}
                     </span>

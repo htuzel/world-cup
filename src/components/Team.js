@@ -4,9 +4,6 @@ import './Team.css';
 class Team extends Component {
   constructor(props) {
       super(props);
-      this.state = {
-          point : 0,
-      }
   }  
 
 
@@ -25,7 +22,7 @@ class Team extends Component {
             </span>
             
             <span className="col-2 teamPoint">
-                {this.state.point}
+                {this.props.point}
             </span>
         </div> 
     );
